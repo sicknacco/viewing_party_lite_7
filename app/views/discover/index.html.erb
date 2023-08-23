@@ -5,6 +5,6 @@
 <div id="movie_search">
   <%= form_with(url: "users/#{@user.id}/movies?q=keyword", method: :get, local: false) do |f|%>
     <%= f.text_field :search_title, placeholder: "Search" %>
-    <%= f.submit "Search" %>
+    <%= f.submit "Find Movies" %>
   <% end %>
 </div>
