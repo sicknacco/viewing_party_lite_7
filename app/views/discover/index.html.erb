@@ -1,3 +1,10 @@
 <h3>Discover Movies</h3>
 
-<%= button_to "Discover Top Rated Movies", "/users/#{@user.id}/movies?q=top%20rated"%>
+<%= button_to "Discover Top Rated Movies", "/users/#{@user.id}/movies?q=top%20rated"%><br>
+
+<div id="movie_search">
+  <%= form_with(url: "users/#{@user.id}/movies?q=keyword", method: :get, local: false) do |f|%>
+    <%= f.text_field :search_title, placeholder: "Search" %>
+    <%= f.submit "Search" %>
+  <% end %>
+</div>

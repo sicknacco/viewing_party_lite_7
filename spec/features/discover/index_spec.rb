@@ -14,12 +14,10 @@ RSpec.describe "User Discover Index '/users/:id/discover'", type: :feature do
       expect(page).to have_button("Discover Top Rated Movies")
     end
 
-    it "displays A text field to enter keyword(s) to search by movie title" do
-
-    end
-
-    it "displays A Button to Search by Movie Title" do
-
+    it "displays a form to enter keyword(s) to search by movie title" do
+      within "#movie_search" do
+        expect(page).to have_field("search_title")
+      end
     end
   end
 end
